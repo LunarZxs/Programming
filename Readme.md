@@ -1,4 +1,2 @@
-# Intail code
-
-new code
-
+# CODES
+Just messing around with programming languages

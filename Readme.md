@@ -1,2 +1,2 @@
 # CODES
-Just messing around with programming languages
+These are the programming languages that I have used for my projects etc.

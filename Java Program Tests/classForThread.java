@@ -16,8 +16,7 @@ public class classForThread implements Runnable{
 	@Override
 	public void run() {
 		while(i > 0) {
-			System.out.println(name + ". " + minusFiguresToZero());
-			
+			System.out.println("Element " + name + ". " + minusFiguresToZero() + "\n");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

@@ -1,7 +1,7 @@
 #Main application file name
-MAIN_APP = LED_blink
+MAIN_APP = //change file name to what the program you are using 
 #Main hex file path in windows format
-MAIN_HEX_PATH = C:\Users\PC1\Desktop\AVRProgramming\$(MAIN_APP).hex
+MAIN_HEX_PATH = //set the path for the program\$(MAIN_APP).hex
 
 # Compiler and other Section
 CC = avr-gcc

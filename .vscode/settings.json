@@ -1,4 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\PC1\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
+    "python.pythonPath": "C:\\Users\\ranul\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe",
     "python.terminal.activateEnvironment": false,
+    "git.ignoreLimitWarning": true,
 }

@@ -22,4 +22,4 @@ print('hello geeks\n'*10)
 sleep(2) 
   
 # now call function we defined above 
-clear() 
+clear()

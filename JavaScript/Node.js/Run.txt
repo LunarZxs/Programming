@@ -1,0 +1,3 @@
+use node then run the file
+
+for eg. node app.js

@@ -6,7 +6,7 @@ for items in [10,20,30]:
 
 print(prices)
 
-#below is the second method
+#below is the second methods
 price_items = [10,20,30]
 total = 0
 

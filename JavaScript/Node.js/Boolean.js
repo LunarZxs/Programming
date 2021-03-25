@@ -13,7 +13,7 @@ function welcomeToBooleans(isTrue)
 
 function testingTrue(checkValue)
 {
-    if(checkValue == 1){
+    if(checkValue === 1){ //if string 1 is passed then it will evaluate as false
         return "True"
     }
 

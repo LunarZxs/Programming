@@ -2,7 +2,11 @@ var myStorage = {
     "car": {
         "inside": {
             "glove box": "maps", 
-            "passenger seat": "crumbs"
+            "passenger seat": "crumbs",
+            "list": [
+                "back",
+                "front"
+            ]
         }, 
         "outside": {
             "trunk": "jacks"
@@ -42,3 +46,4 @@ var myNewStorage =
 console.log(myStorage["car"]["inside"]["glove box"]) //nested loops can be accesed through arrays
 console.log(myStorage.car.inside["glove box"]); //must be in array to access the property otherwise an error can occur
 console.log(myNewStorage[0].list[0]) //prints glove box from truck type
+console.log(myStorage["car"]["inside"]["list"][0]);

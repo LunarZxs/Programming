@@ -10,6 +10,10 @@ var myStorage = {
         }, 
         "outside": {
             "trunk": "jacks"
+        },
+        "addition": {
+            "plus": "add"
+   
         }
     },
 
@@ -47,3 +51,8 @@ console.log(myStorage["car"]["inside"]["glove box"]) //nested loops can be acces
 console.log(myStorage.car.inside["glove box"]); //must be in array to access the property otherwise an error can occur
 console.log(myNewStorage[0].list[0]) //prints glove box from truck type
 console.log(myStorage["car"]["inside"]["list"][0]);
+
+delete myStorage["car"].addition.plus; // deletes the stroed property of additio
+delete myStorage["car"].addition; //deletes addition
+
+console.log(myStorage)

@@ -16,15 +16,38 @@ fs.readFile('readThis.txt', 'utf8', (err,data) =>{
 
 var req = require('./routes')
 var username = req.userName
-var func = req.myFunc
 
 var event = require('events')
-var emit = new event.EventEmitter()
+var user = new event.EventEmitter() 
 
-emit.on('event', function(x){
+
+user.on('event', function(x){
     fs.writeFile('writeMe.txt', '\n' + x, {flag: 'a+'}, err =>{})
 })
 
-emit.emit('event', username)
+user.emit('event', username)
+
+var util = require('util')
+var emitter = require('events')
+
+function myStream(){
+    emitter.call(this)
+}
+
+util.inherits(myStream, emitter);
+
+myStream.prototype.write = function(data) {
+    this.emit('data', data);
+  };
+
+const stream = new myStream();
+
+stream.on('data', (data) => {
+    console.log(`Received data: "${data}"`);
+    var dataFile = `Received data: "${data}"`
+    fs.writeFile('writeMe.txt', '\n' + dataFile, {flag: 'a+'}, err=>{})
+  });
+
+stream.write('It works!')
 
 

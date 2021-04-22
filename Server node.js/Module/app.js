@@ -45,7 +45,7 @@ emitEvent.emit(j.userInfo, true)
 //This for the person event
 var events = require('events')
 var util = require('util')
-const { userInfo } = require('./hello')
+const userInfo = require('./hello')
 
 var Person = function(name){
     this.name = name
@@ -67,4 +67,6 @@ people.forEach(function(person){
 })
 
 james.emit('speak', 'hey guys')
+
+console.log(j.count(['hello', 'Goodbye']))
 

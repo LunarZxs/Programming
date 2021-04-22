@@ -12,6 +12,11 @@ var i = function(s){
     console.log(s);
 }
 
+var count = function(arr){
+
+    return arr[0]
+}
+
 var newCheck =  function(check){
     console.log(check)
 }
@@ -26,5 +31,6 @@ module.exports ={
     myfunction:myfunction(goodbye),
     newCheck : newCheck,
     journey : journey,
-    userInfo: userInfo
+    userInfo: userInfo,
+    count:count
 }

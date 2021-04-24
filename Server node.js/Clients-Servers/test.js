@@ -1,11 +1,11 @@
-var http = require('http')
-var fs = require('fs')
+import { createServer } from 'http'
+import { createReadStream } from 'fs'
 
 
-var server = http.createServer(function(req, res){
+var server = createServer(function(req, res){
     
     //creates a stream to read data
-    var myStream = fs.createReadStream(__dirname + '/writeMe.txt', 'utf-8')
+    var myStream = createReadStream(__dirname + '/writeMe.txt', 'utf-8')
     
     myStream.on('data', function(chunk){
     console.log(chunk)

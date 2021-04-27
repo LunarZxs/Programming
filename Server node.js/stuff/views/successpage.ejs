@@ -37,23 +37,7 @@ form{
     <%- include('partials/nav.ejs') %>
     <h1>Hello World</h1>
 
-    <p>My Name is Ranul</p>
-    <form id="contact-form" method="POST" action="/successpage">
-        <label for="who">Who do want to contact</label>
-        <input type="text" name="who" value="">      
-        
-        <label for="dept">Which Department</label>
-        <input type="text" name="dept" value="">
-        
-        <label for="email">Your email</label>
-        <input type="email" name="email" value="">
+    <p><%= data.who%></p>
 
-        <input name="form" type="submit" value="I Disagree"/>
-    </form>
-
-    <script>
-
-
-    </script>
 </body>
 </html>

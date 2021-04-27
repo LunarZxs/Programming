@@ -1,17 +1,29 @@
-import express from 'express'
-import path from 'path'
+const express = require('express')
 
 const app = express()
 app.set('view engine', 'ejs')
 
-app.use(express.static(path.join('assets')))
+app.use(
+    express.urlencoded({
+      extended: true
+    })
+  )
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+app.use(express.static('/assets'));
 
 app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.post('/successpage', (req,res,next)=>{
+    console.log(req.body)
+    res.render('successpage', {data:req.body})
+});
+
 app.get('/contact', (req,res) => {
-    
     res.render('contact')
 })
 

@@ -53,6 +53,22 @@ form{
 
     <script>
 
+$('form').on('submt', function(){
+
+    var item = $('form input')
+    var userData = {who: who.val(), dept:dept.val(), email: email.val()}
+
+    $.ajax({
+            type:POST,
+            url:'/contact',
+            data:userData,
+
+            success:function(userData){
+                location.reload()
+            }
+        })
+})
+        
 
     </script>
 </body>

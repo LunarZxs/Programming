@@ -10,13 +10,21 @@
 <body>
     
     <%- include('partials/nav.ejs') %>
-    <h1>Hello World</h1>
-
+    
+    <div class="name">
+        <h1>Hello World</h1>
+    </div>
     <p>Welcome to the profile of <%=person %> </p>
 
-    <p>Age: <%=data.age%></p>
-    <p>Gender: <%=data.gender%></p>
 
     <p>Contact us!</p>
+    <script>
+        var element = document.getElementsByClassName('name')[0]
+
+        element.innerHTML +=  '<p id="age">Age: <%=data.age%></p><p>Gender: <%=data.gender%></p>'
+
+
+        console.log(document.getElementById('age'))
+    </script>
 </body>
 </html>

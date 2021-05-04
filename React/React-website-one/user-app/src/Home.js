@@ -1,20 +1,40 @@
+import { useState } from 'react'
+import BlogList from './BlogList';
+import Name from './Name'
+import useFetch from './useFetch';
+
 const Home = () => {
 
-    const handleClick = () =>{
-        console.log("Hello World")
+   const{data:blogs, isPending, error} = useFetch('http://localhost:8000/blogs')
+
+    const[name, setName] = useState([
+        {title: 'mario', name:'HELLO'}, 
+        {title:'something', name:'js'}])
+
+    //testing the useeffect
+    const [testName, setTestName] = useState('name')
+
+    const handClick= () => {
+        setName([{title: 'd'}, {title:'new', name: name[0].name}],)
     }
 
-    const handleClickAgain = (name) =>{
-        console.log("Hello " + name)
-    }
+    // const handlerClick=(id) =>{
+    //     const newBlogs = blogs.filter(blog => blog.id !== id)
+    //     setBlogs(newBlogs)
+    // }
 
 
     return ( 
         <div className="home">
-            <h2>Homepage</h2>
-            <button onClick = {handleClick}>CLick Me</button>
-            {/* This doesn't invoke staright away */}
-            <button onClick = {() => handleClickAgain('Ranul')}>CLick Me Again</button>
+            {error && <div>{error}</div>}
+            {/*If left side is true, then it shows the bloglist*/ }
+            {isPending && <div>Loading...</div>}
+            {blogs && <BlogList blogs={blogs} title={"UserBlogs"}/>}
+            {blogs && <BlogList blogs={blogs.filter((blog) => blog.author === 'Me')}/>} 
+            <Name name = {name} handClick={handClick}/> 
+            <p>{testName}</p>
+            {/*When clicked, change the name of the paragraph above*/}
+            <button onClick={() => setTestName('change name')}>Click Me</button>
         </div>
      );
 }
